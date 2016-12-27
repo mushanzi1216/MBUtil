@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<generatorConfiguration>
+	<classPathEntry location="${drive.class.path}"/>
+
+    <context id="MysqlTables" targetRuntime="MyBatis3">
+		<plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin"/>
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+
+		<plugin type="com.szzt.plugin.PaginationPlugin"/>
+
+		<commentGenerator>
+			<property name="suppressDate" value="false"/>
+			<property name="suppressAllComments" value="true"/>
+		</commentGenerator>
+
+		<jdbcConnection connectionURL="${jdbc.url}" driverClass="${jdbc.driver}" password="${jdbc.username}" userId="${jdbc.password}">
+        </jdbcConnection>  
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false"/>
+		</javaTypeResolver>
+
+		 <javaModelGenerator targetPackage="${model.package}" targetProject="${target.project}">
+            <property name="enableSubPackages" value="true"/>  
+			<property name="useActualColumnNames" value="true"/>
+            <property name="trimStrings" value="true"/>  
+        </javaModelGenerator>  
+  
+        <sqlMapGenerator targetPackage="${xml.mapper.package}" targetProject="${target.project}">
+            <property name="enableSubPackages" value="true"/>  
+        </sqlMapGenerator>  
+  
+        <javaClientGenerator targetPackage="${dao.package}" targetProject="${target.project}" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>  
+        </javaClientGenerator>
+	    </context>
+</generatorConfiguration>

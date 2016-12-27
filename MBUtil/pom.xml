@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.szzt</groupId>
+  <artifactId>MBUtil</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis.generator</groupId>
+			<artifactId>mybatis-generator-core</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+				
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.13</version>
+		</dependency>
+  </dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
+
+
+	<profiles>
+		<profile>
+			<id>product</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<!-- mysql-connector-java-.jar路径-->
+				<drive.class.path>/Users/peterguo/.m2/repository/mysql/mysql-connector-java/5.1.13/mysql-connector-java-5.1.13.jar</drive.class.path>
+                <!--mbg_configuration_mysql.xml相关配置 -->
+				<model.package>com.szzt.data.model</model.package>
+				<dao.package>com.szzt.data.dao</dao.package>
+				<xml.mapper.package>com.szzt.data.mapper</xml.mapper.package>
+				<target.project>/Users/peterguo/wks/yirupay/tech/MobileCommon/trunk/MBUtil/src/main/java</target.project>
+				<!--数据库连接相关配置 -->
+				<jdbc.driver>com.mysql.jdbc.Driver</jdbc.driver>
+				<jdbc.url>jdbc:mysql://192.168.50.12:3301/olink_oms</jdbc.url>
+				<jdbc.username>root</jdbc.username>
+				<jdbc.password>root</jdbc.password>
+			</properties>
+		</profile>
+
+	</profiles>
+</project>
