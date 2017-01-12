@@ -55,6 +55,12 @@ public class AutoGenerate {
         try {
             MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
             myBatisGenerator.generate(null);
+
+
+            System.out.println("Mybatis 工具类生产成功！！！！！！！");
+            System.out.println("model路径为：   " +FileUtils.getValue("model.package"));
+            System.out.println("mapper路径为：   " +FileUtils.getValue("xml.mapper.package"));
+            System.out.println("dao路径为：   " +FileUtils.getValue("dao.package"));
         } catch (InvalidConfigurationException e) {
             e.printStackTrace();
         } catch (SQLException e) {
@@ -65,10 +71,6 @@ public class AutoGenerate {
             e.printStackTrace();
         }
 
-        System.out.println("Mybatis 工具类生产成功！！！！！！！");
-        System.out.println("model路径为：   " +FileUtils.getValue("model.package"));
-        System.out.println("mapper路径为：   " +FileUtils.getValue("xml.mapper.package"));
-        System.out.println("dao路径为：   " +FileUtils.getValue("dao.package"));
     }
 
 

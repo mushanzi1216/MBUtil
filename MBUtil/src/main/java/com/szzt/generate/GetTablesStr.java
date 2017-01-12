@@ -2,6 +2,8 @@ package com.szzt.generate;
 
 import com.szzt.utils.FileUtils;
 
+import java.sql.*;
+
 /**
  * Created by peterguo on 2016/12/26.
  */

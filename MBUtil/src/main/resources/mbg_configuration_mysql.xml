@@ -13,7 +13,7 @@
 			<property name="suppressAllComments" value="true"/>
 		</commentGenerator>
 
-		<jdbcConnection connectionURL="${jdbc.url}" driverClass="${jdbc.driver}" password="${jdbc.username}" userId="${jdbc.password}">
+		<jdbcConnection connectionURL="${jdbc.url}" driverClass="${jdbc.driver}" password="${jdbc.password}" userId="${jdbc.username}">
         </jdbcConnection>  
 
 		<javaTypeResolver>
@@ -33,5 +33,6 @@
         <javaClientGenerator targetPackage="${dao.package}" targetProject="${target.project}" type="XMLMAPPER">
             <property name="enableSubPackages" value="true"/>  
         </javaClientGenerator>
+
 	    </context>
 </generatorConfiguration>
