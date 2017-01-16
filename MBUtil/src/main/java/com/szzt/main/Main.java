@@ -19,6 +19,7 @@ public class Main {
         
         //读取配置文件信息,生成数据库中所有表的字符串
         String tablestr = GetTablesStr.getTables();
+        //String tablestr=""; 如果只需要添加单个表 那只需要在直接输入表名即可
         //填充配置文件中需要填充的信息
         AutoGenerate.fillingXml(tablestr);
         //生成对应的model dao mapper

@@ -3,6 +3,7 @@ package com.szzt.generate;
 import com.szzt.utils.FileUtils;
 import com.szzt.utils.XmlUtils;
 import org.mybatis.generator.api.MyBatisGenerator;
+import org.mybatis.generator.api.VerboseProgressCallback;
 import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;
 import org.mybatis.generator.exception.InvalidConfigurationException;
@@ -54,7 +55,7 @@ public class AutoGenerate {
         DefaultShellCallback callback = new DefaultShellCallback(overwrite);
         try {
             MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
-            myBatisGenerator.generate(null);
+            myBatisGenerator.generate(new VerboseProgressCallback());
 
 
             System.out.println("Mybatis 工具类生产成功！！！！！！！");
